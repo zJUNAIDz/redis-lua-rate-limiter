@@ -1,0 +1,39 @@
+{
+  "name": "testing",
+  "version": "0.1.0",
+  "description": "High‑performance, Redis‑backed token bucket rate limiter implemented with a Lua script and a tiny TypeScript API. Ships with a simple core class and optional Hono middleware for ergonomic HTTP rate limiting.",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./hono": {
+      "import": "./dist/hono/index.js",
+      "types": "./dist/hono/index.d.ts"
+    }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "hono": "^4.11.1",
+    "ioredis": "^5.8.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsup": "^8.5.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
